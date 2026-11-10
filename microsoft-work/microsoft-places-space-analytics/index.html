@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Microsoft Places: Make space for better decisions. | Fayaz PK</title>
+<meta name="description" content="Designing the analytics experience that helps real estate and facilities leaders plan hybrid workplaces with evidence, not guesswork.">
+<!-- Case study 01. Upload this file to a folder named "work" in your site. Links assume your homepage is index.html at the site root. -->
+<style>
+:root{
+  --cs-accent:#2563eb;
+  --cs-muted:color-mix(in srgb, CanvasText 66%, transparent);
+  --cs-line:color-mix(in srgb, CanvasText 14%, transparent);
+  --cs-soft:color-mix(in srgb, CanvasText 4%, transparent);
+  --cs-max:1120px;
+}
+@media (prefers-color-scheme: dark){ :root{ --cs-accent:#7aa2ff; } }
+*{ box-sizing:border-box; }
+body{ margin:0; font-family:"Segoe UI", system-ui, -apple-system, sans-serif; background:Canvas; color:CanvasText; line-height:1.65; -webkit-font-smoothing:antialiased; }
+a{ color:inherit; }
+.cs-wrap{ max-width:var(--cs-max); margin-inline:auto; padding-inline:clamp(20px, 5vw, 48px); }
+.cs-skip{ position:absolute; inset-inline-start:-9999px; }
+.cs-skip:focus{ inset-inline-start:16px; inset-block-start:16px; padding:8px 12px; background:Canvas; border:1px solid var(--cs-line); border-radius:8px; z-index:10; }
+
+/* Top bar */
+.cs-top{ position:sticky; inset-block-start:0; z-index:5; background:color-mix(in srgb, Canvas 88%, transparent); backdrop-filter:blur(10px); border-block-end:1px solid var(--cs-line); }
+.cs-top .cs-wrap{ display:flex; justify-content:space-between; align-items:center; min-height:60px; gap:16px; }
+.cs-brand{ font-weight:700; text-decoration:none; letter-spacing:-.01em; }
+.cs-back{ font-size:.9rem; text-decoration:none; color:var(--cs-muted); }
+.cs-back:hover, .cs-brand:hover{ color:var(--cs-accent); }
+
+/* Hero */
+.cs-hero{ padding-block:clamp(48px, 8vw, 104px) clamp(32px, 5vw, 56px); }
+.cs-eyebrow{ font-size:.75rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--cs-muted); margin:0 0 16px; }
+.cs-eyebrow b{ color:var(--cs-accent); }
+.cs-hero h1{ font-size:clamp(2.2rem, 5.4vw, 4.4rem); line-height:1.06; letter-spacing:-.025em; margin:0 0 20px; max-width:18ch; }
+.cs-dek{ font-size:clamp(1.1rem, 1.8vw, 1.35rem); color:var(--cs-muted); max-width:58ch; margin:0 0 28px; }
+.cs-tags{ display:flex; flex-wrap:wrap; gap:8px; margin:0; padding:0; list-style:none; }
+.cs-tags li{ font-size:.72rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; padding:5px 10px; border:1px solid var(--cs-line); border-radius:999px; color:var(--cs-muted); }
+.cs-tags li.cs-status{ border-color:var(--cs-accent); color:var(--cs-accent); }
+
+/* Meta */
+.cs-meta{ display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:24px; margin:0; padding-block:28px; border-block:1px solid var(--cs-line); }
+.cs-meta dt{ font-size:.72rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--cs-muted); margin:0 0 4px; }
+.cs-meta dd{ margin:0; }
+
+/* At a glance */
+.cs-glance{ display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:1px; margin-block:clamp(32px, 5vw, 56px); background:var(--cs-line); border:1px solid var(--cs-line); border-radius:16px; overflow:hidden; }
+.cs-glance div{ padding:24px; background:Canvas; }
+.cs-glance h2{ font-size:.72rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--cs-accent); margin:0 0 8px; }
+.cs-glance p{ margin:0; font-size:1.05rem; }
+
+/* Content rows */
+.cs-row{ display:grid; grid-template-columns:minmax(0, 3fr) minmax(0, 9fr); gap:clamp(24px, 4vw, 64px); padding-block:clamp(36px, 5vw, 60px); border-block-start:1px solid var(--cs-line); }
+.cs-row > h2{ font-size:1.05rem; letter-spacing:-.005em; margin:0; position:sticky; inset-block-start:84px; align-self:start; }
+.cs-body > *:first-child{ margin-block-start:0; }
+.cs-body > *:last-child{ margin-block-end:0; }
+.cs-body p{ margin:0 0 16px; max-width:68ch; }
+.cs-big{ font-size:clamp(1.2rem, 2vw, 1.5rem); line-height:1.4; font-weight:600; letter-spacing:-.01em; }
+.cs-list{ margin:0 0 16px; padding:0; list-style:none; display:grid; gap:12px; max-width:68ch; }
+.cs-list li{ position:relative; padding-inline-start:22px; }
+.cs-list li::before{ content:""; position:absolute; inset-inline-start:0; inset-block-start:.75em; width:10px; height:2px; background:var(--cs-accent); }
+.cs-cards{ display:grid; gap:16px; margin:0 0 20px; }
+.cs-cols-3{ grid-template-columns:repeat(auto-fit, minmax(210px, 1fr)); }
+.cs-cols-2{ grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); }
+.cs-card{ padding:20px 22px; border:1px solid var(--cs-line); border-radius:14px; background:var(--cs-soft); }
+.cs-card h3{ font-size:1.02rem; margin:0 0 6px; }
+.cs-card p{ margin:0; color:var(--cs-muted); font-size:.95rem; }
+.cs-callout{ padding:16px 20px; border-inline-start:3px solid var(--cs-accent); background:var(--cs-soft); border-radius:0 12px 12px 0; font-weight:600; }
+.cs-steps{ counter-reset:cs; list-style:none; margin:0 0 20px; padding:0; display:grid; gap:0; }
+.cs-steps li{ counter-increment:cs; position:relative; padding-block-end:20px; padding-inline-start:52px; }
+.cs-steps li::before{ content:counter(cs, decimal-leading-zero); position:absolute; inset-inline-start:0; inset-block-start:0; width:36px; height:36px; border-radius:50%; border:1px solid var(--cs-accent); color:var(--cs-accent); font-size:.8rem; font-weight:700; display:grid; place-items:center; }
+.cs-steps li::after{ content:""; position:absolute; inset-inline-start:18px; inset-block:40px 4px; width:1px; background:var(--cs-line); }
+.cs-steps li:last-child::after{ display:none; }
+.cs-steps h3{ font-size:1rem; margin:6px 0 4px; }
+.cs-steps p{ margin:0; color:var(--cs-muted); }
+.cs-flow{ padding:24px; border:1px solid var(--cs-line); border-radius:16px; margin:0 0 20px; }
+.cs-flow > h3{ font-size:1.15rem; margin:0 0 6px; }
+.cs-flow > p{ color:var(--cs-muted); }
+.cs-table-wrap{ overflow-x:auto; margin:0 0 20px; border:1px solid var(--cs-line); border-radius:14px; }
+.cs-table{ width:100%; border-collapse:collapse; font-size:.95rem; }
+.cs-table th, .cs-table td{ text-align:start; vertical-align:top; padding:14px 16px; border-block-end:1px solid var(--cs-line); }
+.cs-table thead th{ font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--cs-muted); background:var(--cs-soft); }
+.cs-table tbody tr:last-child th, .cs-table tbody tr:last-child td{ border-block-end:0; }
+.cs-table tbody th{ font-weight:700; white-space:nowrap; }
+.cs-scale{ display:flex; justify-content:space-between; gap:16px; font-size:.82rem; color:var(--cs-muted); padding-block-start:10px; border-block-start:2px solid; border-image:linear-gradient(90deg, var(--cs-line), var(--cs-accent)) 1; }
+.cs-figure{ margin:8px 0 20px; }
+.cs-ph{ aspect-ratio:16 / 9; display:grid; place-content:center; text-align:center; gap:6px; padding:24px; border:1.5px dashed var(--cs-line); border-radius:16px; background:var(--cs-soft); color:var(--cs-muted); font-size:.95rem; }
+.cs-ph span{ font-size:.7rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--cs-accent); }
+.cs-figure img{ width:100%; height:auto; border-radius:16px; border:1px solid var(--cs-line); display:block; }
+.cs-figure figcaption{ font-size:.85rem; color:var(--cs-muted); margin-block-start:10px; }
+
+/* Decisions */
+.cs-decisions{ display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:16px; }
+.cs-decision{ padding:22px; border:1px solid var(--cs-line); border-radius:16px; }
+.cs-decision h3{ font-size:1.05rem; margin:0 0 12px; }
+.cs-decision dl{ margin:0; }
+.cs-decision dt{ font-size:.7rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--cs-accent); }
+.cs-decision dd{ margin:2px 0 12px; color:var(--cs-muted); font-size:.95rem; }
+.cs-decision dd:last-child{ margin-block-end:0; }
+
+/* Outcomes + reflection */
+.cs-outcomes{ list-style:none; margin:0; padding:0; display:grid; gap:12px; }
+.cs-outcomes li{ padding:16px 20px; border-inline-start:3px solid var(--cs-accent); background:var(--cs-soft); border-radius:0 12px 12px 0; font-weight:600; }
+.cs-reflect{ margin:0; padding-block:clamp(40px, 6vw, 80px); border-block-start:1px solid var(--cs-line); }
+.cs-reflect p{ font-size:clamp(1.4rem, 3vw, 2.2rem); line-height:1.25; letter-spacing:-.015em; font-weight:600; max-width:28ch; margin:0 0 12px; }
+.cs-reflect footer{ color:var(--cs-muted); font-size:.9rem; }
+.cs-note{ font-size:.9rem; color:var(--cs-muted); margin:0; padding-block-end:32px; }
+
+/* Pager */
+.cs-pager{ display:grid; grid-template-columns:1fr 1fr; gap:16px; padding-block:32px 64px; border-block-start:1px solid var(--cs-line); }
+.cs-pager a{ display:block; padding:20px 22px; border:1px solid var(--cs-line); border-radius:16px; text-decoration:none; transition:border-color .2s, transform .2s; }
+.cs-pager a:hover{ border-color:var(--cs-accent); transform:translateY(-2px); }
+.cs-pager span{ display:block; font-size:.72rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--cs-muted); margin-block-end:4px; }
+.cs-pager strong{ font-size:1.05rem; }
+.cs-pager .cs-next{ text-align:end; grid-column:2; }
+
+@media (max-width: 820px){
+  .cs-row{ grid-template-columns:1fr; gap:16px; }
+  .cs-row > h2{ position:static; }
+  .cs-pager{ grid-template-columns:1fr; }
+  .cs-pager .cs-next{ grid-column:auto; }
+}
+@media (prefers-reduced-motion: reduce){ .cs-pager a{ transition:none; } }
+</style>
+<link rel="stylesheet" href="../case-style.css">
+</head>
+<body>
+<a class="cs-skip" href="#cs-main">Skip to content</a>
+<header class="cs-top"><div class="cs-wrap"><a class="cs-brand" href="../../index.html" aria-label="Fayaz home">Fayaz</a><nav class="cs-nav" aria-label="Main navigation"><a href="../../index.html#work">Selected work</a><a href="../">Microsoft work</a><a href="../../index.html#about">About</a><a href="../../index.html#contact">Let’s talk ↗</a></nav></div></header>
+<main id="cs-main">
+  <div class="cs-wrap">
+    <header class="cs-hero">
+      <p class="cs-eyebrow"><b>01</b> / Microsoft Places · Case study</p>
+      <h1>Make space for better decisions.</h1>
+      <p class="cs-dek">Designing the analytics experience that helps real estate and facilities leaders plan hybrid workplaces with evidence, not guesswork.</p>
+      <ul class="cs-tags"><li>Zero to one</li><li>Enterprise analytics</li><li>Admin experience</li><li class="cs-status">Generally available</li></ul>
+    </header>
+    <dl class="cs-meta"><div><dt>Role</dt><dd>Design lead, Space Analytics (admin experience)</dd></div><div><dt>Timeline</dt><dd>2023 – 2025</dd></div><div><dt>Team</dt><dd>Product, engineering, research and data science across India and Redmond</dd></div><div><dt>Platform</dt><dd>Microsoft Places admin experience</dd></div></dl>
+    <section class="cs-glance" aria-label="At a glance">
+      <div><h2>The problem</h2><p>Hybrid work made office attendance unpredictable, and space decisions ran on manual counts and guesswork.</p></div>
+      <div><h2>What I led</h2><p>The analytics experience system and an insight-to-action model, from private preview to general availability.</p></div>
+      <div><h2>Outcome</h2><p>Shipped at general availability and showcased at Microsoft Ignite 2024.</p></div>
+    </section>
+    <section class="cs-row"><h2>Context</h2><div class="cs-body"><p>Microsoft Places helps organizations run hybrid work: when people come in, which spaces they book and how those spaces get used. Space Analytics is the part of Places that real estate and facilities teams use to understand utilization and plan their portfolio.</p><p>I led design for the admin-side analytics experience, from private preview through general availability.</p></div></section>
+    <section class="cs-row"><h2>The problem</h2><div class="cs-body"><p>Most utilization data came from manual observation and anecdotal feedback. With attendance changing day to day, facilities leaders struggled to:</p><ul class="cs-list"><li>Allocate desks and rooms when attendance swings from one day to the next</li><li>Find the most and least used spaces, and act on what they found</li><li>Justify budget and investment requests to leadership with real data</li></ul><p>Preview customers told us something more fundamental: they would only act on numbers they trusted. The experience had to be clear about where the data came from and how it was calculated.</p></div></section>
+    <section class="cs-row"><h2>Who I designed for</h2><div class="cs-body"><div class="cs-cards cs-cols-3"><div class="cs-card"><h3>Real estate &amp; facilities managers</h3><p>Optimize space against company policy and justify investments. Success means healthy utilization, good employee sentiment and controlled cost.</p></div><div class="cs-card"><h3>IT admins</h3><p>Configure the policies, devices and signals that make spaces work. They need to know exactly what to change, and why.</p></div><div class="cs-card"><h3>Business leaders</h3><p>Need the right space for their teams and the right hybrid rhythm. They shape behavior through team guidance.</p></div></div><p class="cs-callout">Key insight: the person who spots a space problem is rarely the person who can fix it. The design had to connect them.</p></div></section>
+    <section class="cs-row"><h2>What I designed</h2><div class="cs-body"><p>I built the analytics experience as a system of four reusable building blocks, so every new report would look, behave and earn trust the same way.</p><div class="cs-cards cs-cols-2"><div class="cs-card"><h3>Report cards</h3><p>Consolidated, contextual metrics with detail on hover, drill-down into trends and anomalies, and a dedicated place for insights.</p></div><div class="cs-card"><h3>Contextual filters</h3><p>Switch between counts and percentages, and control data granularity without losing context.</p></div><div class="cs-card"><h3>Error &amp; help framework</h3><p>Partial-data and status warnings, persistent error states with details, and help that starts in context before it goes general.</p></div><div class="cs-card"><h3>Actionable insights</h3><p>Starts with rule-based insights and recommendations, with a defined path to Copilot-generated insights and a Copilot entry point.</p></div></div></div></section>
+    <section class="cs-row"><h2>From insight to action</h2><div class="cs-body"><p>A chart that shows empty rooms doesn’t free up a single room. I designed end-to-end flows that take an insight to the person who can act on it, and tested them with preview customers using interactive prototypes.</p><div class="cs-flow"><h3>Raise workplan adoption</h3><p>Workplans, where people share when they plan to come in, are one of the strongest signals for predicting office attendance.</p><ol class="cs-steps"><li><h3>Spot it</h3><p>A facilities admin sees an insight that workplan adoption is low.</p></li><li><h3>Route it</h3><p>She drills into adoption by leader and requests action without leaving the report.</p></li><li><h3>Act on it</h3><p>The leader updates team guidance in Places and asks their managers to encourage planning.</p></li></ol></div><div class="cs-flow"><h3>Free up rooms nobody uses</h3><p>No-show bookings waste rooms and frustrate people who are looking for space.</p><ol class="cs-steps"><li><h3>Spot it</h3><p>Analytics finds rooms with repeated no-shows and recommends auto-release.</p></li><li><h3>Route it</h3><p>The facilities admin selects those rooms and sends IT a pre-filled request with the room list and setup guidance.</p></li><li><h3>Act on it</h3><p>IT turns on auto-release, and rooms nobody checks into go back into the pool.</p></li></ol></div></div></section>
+    <section class="cs-row"><h2>How I led</h2><div class="cs-body"><ul class="cs-list"><li>Ran 10+ research and feedback calls with enterprise preview customers and turned what we heard into roadmap input.</li><li>Served as the India design point of contact for a large enterprise customer during preview.</li><li>Logged and triaged 100+ UX quality issues so the generally available experience met the craft bar.</li><li>Influenced the choice of charting framework the analytics experience is built on.</li><li>Built the demos and stories the team used with customers and leadership.</li></ul></div></section>
+    <section class="cs-row"><h2>Key decisions</h2><div class="cs-body"><div class="cs-decisions"><div class="cs-decision"><h3>Trust before insight</h3><dl><dt>Why</dt><dd>Customers wouldn’t act on numbers they couldn’t explain, so data sources, partial data and calculations are always explicit.</dd><dt>Trade-off</dt><dd>More status and help UI. A layered help model, in context first, kept it calm.</dd></dl></div><div class="cs-decision"><h3>Every insight ends in an action</h3><dl><dt>Why</dt><dd>An insight is only useful if the right person can act on it.</dd><dt>Trade-off</dt><dd>Flows cross personas and admin tools outside Places, so every hand-off had to carry its context.</dd></dl></div><div class="cs-decision"><h3>Rules first, Copilot next</h3><dl><dt>Why</dt><dd>Rule-based insights could ship sooner and be trusted, and Copilot insights build on the same framework.</dd><dt>Trade-off</dt><dd>Less flexible at launch, in exchange for a clear path to grow.</dd></dl></div></div></div></section>
+    <section class="cs-row"><h2>Outcome</h2><div class="cs-body"><!-- Add cleared, public-safe metrics here as extra list items --><ul class="cs-outcomes"><li>Space Analytics moved from private preview, through public preview, to general availability, and was showcased at Microsoft Ignite 2024.</li><li>The report card, filter, error and insight frameworks gave the team a reusable foundation for new reports.</li><li>Feedback from preview customers fed directly into the product roadmap.</li></ul></div></section>
+    <blockquote class="cs-reflect"><p>Admin products earn adoption through trust. The most important design work wasn’t the charts. It was making the data honest about its limits, and making every insight end with someone doing something.</p><footer>What I took away</footer></blockquote>
+
+    <nav class="cs-pager" aria-label="More projects"><a class="cs-next" href="../copilot-outlook-calendar/"><span>Next &rarr;</span><strong>02 · Outlook Calendar</strong></a></nav>
+  </div>
+</main>
+</body>
+</html>
