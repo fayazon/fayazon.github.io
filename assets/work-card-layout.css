@@ -1,15 +1,72 @@
 .work .project {
   border: 1px solid rgba(23, 42, 42, .14);
   border-radius: 22px;
-  padding: clamp(26px, 4vw, 54px);
+  padding: clamp(26px, 4vw, 40px);
   margin-bottom: 28px;
 }
+.hero { padding-top: 68px; }
+.hero h1 {
+  max-width: 1080px;
+  margin: 32px 0 36px;
+  font-size: clamp(56px, 8.5vw, 116px);
+  line-height: 1.02;
+}
+.hero-bottom {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 28px;
+}
+.hero-bottom p {
+  max-width: 670px;
+  margin: 0;
+  font-size: clamp(17px, 1.6vw, 20px);
+  line-height: 1.55;
+}
+.hero .button {
+  min-height: auto;
+  padding: 0 0 7px;
+  gap: 18px;
+  color: #bfd9e5;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid currentColor;
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 16px;
+}
+.hero .button:hover { color: #f4f3eb; background: transparent; transform: none; }
+.hero .button:focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
+.hero .button span { font-size: 19px; }
+.hero-meta { margin-top: 68px; }
+.ticker {
+  margin-top: 0;
+  padding: 14px 0;
+  color: #aeb9b8;
+  background: #151614;
+  border-top: 1px solid #383a33;
+  border-bottom: 1px solid #383a33;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  transform: none;
+}
+.ticker b { padding: 0 24px; opacity: .45; }
+.about .ticker {
+  margin: 56px 0 0;
+  color: #555b4f;
+  background: transparent;
+  border-top: 1px solid #b9bdb0;
+  border-bottom: 1px solid #b9bdb0;
+}
+.about .community { margin-top: 52px; padding-top: 0; border-top: 0; }
+.footer-meta { align-items: baseline; }
+.footer-meta > span, .footer-meta > a, .footer-meta > button { line-height: 1.5; }
+.footer-meta button { min-height: 0; height: auto; }
 .work .project-top {
   align-items: baseline;
   border-bottom: 1px solid rgba(23, 42, 42, .28);
   padding-bottom: 18px;
 }
-.work .project-main { padding: 20px 0 28px; }
+.work .project-main { padding: 12px 0 22px; }
 .work .project h3 {
   max-width: 780px;
   margin: 18px 0 22px;
@@ -20,6 +77,7 @@
   line-height: 1.5;
 }
 .work .flow { box-shadow: none; }
+.work .flow-row > span:last-child { margin-left: 0; }
 .work .flow-result {
   background: transparent !important;
   color: inherit !important;
@@ -35,7 +93,7 @@
   gap: 14px;
   width: fit-content;
   min-height: auto !important;
-  margin: 0 0 30px;
+  margin: 32px 0 0;
   padding: 0 0 5px !important;
   color: inherit !important;
   background: transparent !important;
@@ -57,14 +115,37 @@
 .work .text-link { background: transparent !important; box-shadow: none !important; }
 .work .project-detail {
   border-top: 1px solid rgba(23, 42, 42, .24);
-  padding-top: 26px;
+  padding-top: 22px;
 }
-.work .case-heading { padding: 18px 0 30px; }
+.work .masai .project-detail { border-top: 0; padding-top: 0; }
+.work .case-heading { padding: 12px 0 18px; }
+.work .case-heading .case-study-cta { margin-top: 28px; }
+.about-inner { display: block; }
+.about-copy {
+  display: grid;
+  grid-template-columns: minmax(160px, .55fr) minmax(0, 1.45fr);
+  column-gap: 70px;
+  align-items: start;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+.about-copy > .eyebrow { grid-column: 1; grid-row: 1 / span 3; margin: 8px 0 0; }
+.about-copy > h2, .about-copy > p:not(.eyebrow) { grid-column: 2; }
+.about-copy h2 { margin: 0 0 24px; }
+.about-copy > p:not(.eyebrow) { max-width: 640px; margin: 0 0 18px; }
 @media (max-width: 700px) {
+  .hero { padding-top: 52px; }
+  .hero h1 { margin: 30px 0 28px; font-size: clamp(48px, 12vw, 74px); }
+  .hero-bottom { gap: 24px; }
+  .hero-meta { margin-top: 52px; }
+  .ticker { margin-top: 0; }
   .work .project { padding: 24px; border-radius: 16px; }
   .work .project-top { align-items: flex-start; }
-  .work .project-main { padding: 10px 0 24px; }
+  .work .project-main { padding: 10px 0 20px; }
   .work .case-study-cta { max-width: 100%; align-items: flex-start; }
+  .about-copy { grid-template-columns: 1fr; column-gap: 0; }
+  .about-copy > .eyebrow, .about-copy > h2, .about-copy > p:not(.eyebrow) { grid-column: 1; }
+  .about-copy > .eyebrow { grid-row: auto; margin-bottom: 24px; }
 }
 
 .work .microsoft-archive {
